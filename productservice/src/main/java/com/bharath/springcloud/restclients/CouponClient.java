@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.bharath.springcloud.model.Coupon;
 
-@FeignClient("zuul-api-gateway")
+//@FeignClient("zuul-api-gateway")
+@FeignClient("COUPON-SERVICE")
 //@RibbonClient("COUPON-SERVICE")
 public interface CouponClient {
-	@GetMapping("/coupon-service/couponapi/coupons/{code}")
+	@GetMapping("/couponapi/coupons/{code}")
 	Coupon getCoupon(@PathVariable("code") String code);
 }
